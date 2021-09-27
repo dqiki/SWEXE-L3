@@ -1,0 +1,9 @@
+<p>
+<strong>ツイート:</strong>
+<%= @tweet.message %>
+</p>
+<p>
+<strong>日時:</strong>
+<%= Time.current.strftime('%H:%M:%S') %>
+</p>
+<%= link_to '戻る', '/' %>
