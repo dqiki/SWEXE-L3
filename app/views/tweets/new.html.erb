@@ -9,6 +9,9 @@
 <%= form_for @tweet , url: {action: :create} do |f| %>
 <%= f.label :message, 'ツイート' %>
 <%= f.text_field :message %>
+<%= f.label :file, '画像' %>
+<%= f.file_field :file %>
 <%= Time.current %>
+
 <%= f.submit 'ツイートする' %>
 <% end %>

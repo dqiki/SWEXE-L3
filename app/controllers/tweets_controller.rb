@@ -7,10 +7,11 @@ class TweetsController < ApplicationController
   end
   def create
     logger.debug "-------"
-     @tweet = Tweet.new(message: params[:tweet][:message], tdate: Time.current)
+    file = params[:tweet][:file].read
+     @tweet = Tweet.new(message: params[:tweet][:message], tdate: Time.current, file: file)
      if @tweet.save
          flash[:notice] = ''
-         redirect_to root_path
+         redirect_to tweet_path
      else
          render 'new'
      end
@@ -18,7 +19,7 @@ class TweetsController < ApplicationController
   def destroy
      tweet = Tweet.find(params[:id])
      tweet.destroy
-     redirect_to root_path
+     redirect_to tweet_path
   end
   def show
      @tweet = Tweet.find(params[:id])
@@ -27,8 +28,13 @@ class TweetsController < ApplicationController
      @tweet = Tweet.find(params[:id])
   end
   def update
+     file = params[:tweet][:file].read
      tweet = Tweet.find(params[:id])
-     tweet.update(message: params[:tweet][:message])
+     tweet.update(message: params[:tweet][:message], file: file)
      redirect_to root_path
+  end
+  def get_image
+    tweet = Tweet.find(params[:id]) 
+    send_data tweet.file, disposition: :inline, type: 'image/png'
   end
 end

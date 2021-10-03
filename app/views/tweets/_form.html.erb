@@ -1,0 +1,12 @@
+<%= form_for @tweet , url: {action: :create} do |f| %>
+<%= f.label :message, 'ツイート' %>
+<%= f.text_field :message %>
+<%= Time.current %>
+
+<%= f.submit 'ツイートする' %>
+<% end %>
+<%= form_for @tweet , url: {action: :update} do |f| %>
+<%= f.label :message, 'ツイート' %>
+<%= f.text_field :message %>
+<%= f.submit '更新' %>
+<% end %>
