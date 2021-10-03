@@ -21,13 +21,13 @@ nav li {
     display:inline;
 }
 nav li a {
+    text-decoration: none;
     padding:8px;
     background-color: #dddddd;
-    color: #000;
+    color: #555;
 }
 nav li a:hover {
-    background-color: #AFDFE4;
-    color: white;
+    color: black;
 }
 nav1 li a {
     text-decoration: none;
@@ -35,9 +35,19 @@ nav1 li a {
     background-color: #dddddd;
     color: #000;
 }
-ul li {
+nav1 li a:hover {
+    color:black;
+    background-color: #555;
+}
+ul1 li {
   padding-top:10px;
   padding-bottom:10px;
+}
+ul1 {
+    list-style: none;
+}
+container {
+    display: flex;
 }
 .header,.content {
     text-align: right;
@@ -48,6 +58,54 @@ ul li {
     width: 260px;
     height: 0px;
 }
-container {
-    display: flex;
+.btn-gradient-radius {
+　width: 150px;
+  display: inline-block;
+  padding: 7px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #00bfff;
+  transition: .4s;
+  text-align: center;
+}
+.home {
+    padding-left: 30px;
+    line-height: 30px;
+    background: url(../images/home.png) no-repeat;
+}
+.wa {
+    padding-left: 30px;
+    line-height: 30px;
+    background: url(../images/wadai.png) no-repeat;
+}
+.tu {
+    padding-left: 30px;
+    line-height: 30px;
+    background: url(../images/tuuchi.png) no-repeat;
+}
+.msg {
+    padding-left: 30px;
+    line-height: 30px;
+    background: url(../images/msg.png) no-repeat;
+}
+.bo {
+    padding-left: 30px;
+    line-height: 30px;
+    background: url(../images/book.png) no-repeat;
+}
+.ri {
+    padding-left: 30px;
+    line-height: 30px;
+    background: url(../images/list.png) no-repeat;
+}
+.pro {
+    padding-left: 30px;
+    line-height: 30px;
+    background: url(../images/pro.png) no-repeat;
+}
+.mo {
+    padding-left: 30px;
+    line-height: 30px;
+    background: url(../images/mo.png) no-repeat;
 }
