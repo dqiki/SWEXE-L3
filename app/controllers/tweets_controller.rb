@@ -33,8 +33,4 @@ class TweetsController < ApplicationController
      tweet.update(message: params[:tweet][:message], file: file)
      redirect_to root_path
   end
-  def get_image
-    tweet = Tweet.find(params[:id]) 
-    send_data tweet.file, disposition: :inline, type: 'image/png'
-  end
 end
