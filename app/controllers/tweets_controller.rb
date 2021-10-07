@@ -11,7 +11,7 @@ class TweetsController < ApplicationController
      @tweet = Tweet.new(message: params[:tweet][:message], tdate: Time.current, file: file)
      if @tweet.save
          flash[:notice] = ''
-         redirect_to tweets_path
+         redirect_to root_path
      else
          render 'new'
      end
