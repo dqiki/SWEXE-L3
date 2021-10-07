@@ -1,13 +1,13 @@
 class TweetsController < ApplicationController
   def index
-    @tweets = Tweet.all
+        @tweets = Tweet.all
   end
   def new
-    @tweet = Tweet.new
+        @tweet = Tweet.new
   end
   def create
-    logger.debug "-------"
-    file = params[:tweet][:file].read
+        logger.debug "-------"
+        file = params[:tweet][:file].read
      @tweet = Tweet.new(message: params[:tweet][:message], tdate: Time.current, file: file)
      if @tweet.save
          flash[:notice] = ''

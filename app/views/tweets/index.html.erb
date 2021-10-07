@@ -1,15 +1,15 @@
 <% if flash[:notice] %>
-    <span style="color:green;">
-        <%= flash[:notice] %>
-    </span>
+<span style="color:green;">
+<%= flash[:notice] %>
+</span>
 <% end %>
 
 <% @tweets.each do |tweet| %>
-    <p>
-        <%= tweet.message %>
-        <%= ((Time.current - tweet.tdate) / 60).to_i.to_s + "分前" %>
-        <%= link_to '削除', "/tweets/#{tweet.id}", method: :delete %>
-        <%= link_to '表示', "/tweets/#{tweet.id}" %>
-        <%= link_to '編集', "/tweets/#{tweet.id}/edit" %>
-    </p>
+<p>
+<%= tweet.message %>
+<%= ((Time.current - tweet.tdate) / 60).to_i.to_s + "分前" %>
+<%= link_to '削除', "/tweets/#{tweet.id}", method: :delete %>
+<%= link_to '表示', "/tweets/#{tweet.id}" %>
+<%= link_to '編集', "/tweets/#{tweet.id}/edit" %>
+</p>
 <% end %>
