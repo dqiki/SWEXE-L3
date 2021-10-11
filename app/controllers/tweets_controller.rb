@@ -7,11 +7,10 @@ class TweetsController < ApplicationController
   end
   def create
         logger.debug "-------"
-        file = params[:tweet][:file].read
-     @tweet = Tweet.new(message: params[:tweet][:message], tdate: Time.current, file: file)
+     @tweet = Tweet.new(message: params[:tweet][:message], tdate: Time.current)
      if @tweet.save
          flash[:notice] = ''
-         redirect_to tweets_path
+         redirect_to root_path
      else
          render 'new'
      end
@@ -28,9 +27,8 @@ class TweetsController < ApplicationController
      @tweet = Tweet.find(params[:id])
   end
   def update
-     file = params[:tweet][:file].read
      tweet = Tweet.find(params[:id])
-     tweet.update(message: params[:tweet][:message], file: file)
+     tweet.update(message: params[:tweet][:message])
      redirect_to root_path
   end
 end
